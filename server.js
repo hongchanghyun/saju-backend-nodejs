@@ -18,7 +18,7 @@ const { sequelize } = require("./app/models");
 sequelize
   .sync({ force: false })
   .then(async () => {
-    process.env.NODE_ENV !== "test" ? console.log("Mysql 연결 성공....") : null;
+    process.env.NODE_ENV !== "test" ? console.log("Mysql 연결 성공ㅎㅎㅎㅎ") : null;
   })
   .catch(async (err) => {
     console.log(err)
