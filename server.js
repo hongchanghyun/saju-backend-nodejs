@@ -18,17 +18,17 @@ const { sequelize } = require("./app/models");
 sequelize
   .sync({ force: false })
   .then(async () => {
-    process.env.NODE_ENV !== "test" ? console.log("Mysql 연결 성공") : null;
+    process.env.NODE_ENV !== "test" ? console.log("Mysql 연결 성공 ㅎ") : null;
   })
   .catch(async (err) => {
     console.log(err)
     if (process.env.NODE_ENV === "prod") {
       process.env.SLACK_KEY
-        ? await slack.slackMessage("#ff0000", "Mysql 연결 에러", err.message, moment().unix())
+        ? await slack.slackMessage("#ff0000", "Mysql 연결 에러 ㅎ", err.message, moment().unix())
         : null;
-      throw new Error("Mysql 연결 에러!");
+      throw new Error("Mysql 연결 에러! ㅎ");
     } else {
-      throw new Error("Mysql 연결 에러!");
+      throw new Error("Mysql 연결 에러! ㅎ");
     }
   });
 
